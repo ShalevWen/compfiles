@@ -33,7 +33,7 @@ noncomputable def unifDistN := PMF.uniformOfFintype (DigitSeq n)
 
 
 def to_nat_digit : Digit → ℕ := fun d ↦ d + 1
-def is_good_seq {n} (s : DigitSeq n) := (∏a, to_nat_digit (s a)) % 10 ≠ 0
+def is_good_seq {n} (s : DigitSeq n) := (∏a, to_nat_digit (s a)) % 10 = 0
 def good_seqs {n} := {s : DigitSeq n | is_good_seq s}
 
 noncomputable determine solution : ENNReal := 1 - (8 / 9) ^ n - (5 / 9) ^ n + (4 / 9) ^ n
